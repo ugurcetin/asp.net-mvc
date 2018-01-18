@@ -1,0 +1,30 @@
+﻿@model MVC.Models.davet
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tesekkur</title>
+</head>
+<body>
+    <div> 
+
+        <h1> Cevabınız için Teşekkürler, @Model.AdSoyad </h1>
+
+        @if(Model.KatilacakMi==true)
+        {
+            @:Sizi dört gözle bekliyoruz.
+        }
+        else
+        {
+            @:Üzgünüz, keşke birlikte olabilseydik.
+        }
+
+    </div>
+</body>
+</html>

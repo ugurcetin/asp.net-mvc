@@ -1,0 +1,42 @@
+﻿@model MVC.Models.davet
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LCVForm</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <p> ADINIZ : @Html.TextBoxFor(x=>x.AdSoyad) </p>
+            <p> EPOSTA : @Html.TextBoxFor(x=>x.EPosta) </p>
+            <p> TELEFON : @Html.TextBoxFor(x=>x.Telefon) </p>
+            <p> KATILACAK MISINIZ? : @Html.DropDownListFor(x=>x.KatilacakMi,new[]
+
+                                {
+                                    new SelectListItem() {Text = "Evet, Katılacağım" , Value=bool.TrueString },
+
+
+                                    new SelectListItem() {Text = "Hayır, Katılmayacağım" , Value=bool.FalseString },
+
+
+
+                                },"Bir Seçim Yapınız")
+
+        </p>
+
+        <input type="submit" value="GÖNDER" />
+
+
+        }
+    </div>
+</body>
+</html>

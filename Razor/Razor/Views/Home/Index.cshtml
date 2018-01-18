@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @{ 
+            var Mesaj = "";
+            if(IsPost)
+            {
+                var sayi1 = Request["sayi1"];
+                var sayi2 = Request["sayi2"];
+                var toplam = sayi1.AsInt() + sayi2.AsInt();
+
+                Mesaj = "Toplam : " + toplam;
+            }
+        }
+        <form action="" method="post">
+        <p>
+            <label for="sayi1">Birinci sayı:</label><br>
+            <input type="text" name="sayi1">
+        </p>
+        <p>
+            <label for="sayi2">İkinci sayı:</label><br>
+            <input type="text" name="sayi2">
+        </p>
+        <p> <input type="submit" value="Topla" ></p>
+
+        </form>
+
+        <p>@Mesaj</p>
+    </div>
+</body>
+</html>

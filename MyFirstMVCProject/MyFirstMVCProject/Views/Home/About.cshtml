@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@section deneme{
+    <span>
+        About Section
+    </span>
+}
+@{
+    byte yas = 13;
+}
+<p>Kullanıcının yaşı 15'den büyük mü?</p>
+@{
+    if (yas > 15)
+    {
+        <p>Evet büyük.</p>
+    }
+    else
+    {
+        <p>Hayır büyük değil.</p>
+    }
+}
+<h3>Yazılım Dilleri</h3>
+<ul>
+    @{
+        string[] dizi = new string[4];
+        dizi[0] = "C#";
+        dizi[1] = "PHP";
+        dizi[2] = "Java";
+        dizi[3] = "Phyton";
+        foreach (var item in dizi)
+        {
+            <li>@item</li>
+        }
+    }
+</ul>
+
+<img src="~/WhatsApp Image 2017-07-08 at 14.16.25.jpg" />
+
+@{
+    string resimYolu = "~/WhatsApp Image 2017-07-08 at 14.16.25.jpg.jpg";
+
+}
+<img src="@Href(resimYolu)" />
+
+<p>Use this area to provide additional information.</p>

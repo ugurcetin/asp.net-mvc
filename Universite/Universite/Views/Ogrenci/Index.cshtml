@@ -1,0 +1,71 @@
+﻿@*@model IEnumerable<Universite.Models.Ogrenci>*@
+
+@model PagedList.IPagedList<Universite.Models.Ogrenci>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Öğrenciler";
+}
+
+<h2>Öğrenciler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Öğrenci Kaydı", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Ogrenci", FormMethod.Get))
+{
+    <p>
+        Ad, Soyada Göre Arama : @Html.TextBox("Arama", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Ara">
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Ad)*@
+            Ad
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Soyad)*@
+            @Html.ActionLink("Soyadı", "Index", new { siralama = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DogumTarihi)*@
+            @Html.ActionLink("Doğum Tarihi", "Index", new { siralama = ViewBag.DateSortParm })
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.EPosta)*@
+            EPosta
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogumTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EPosta)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.OgrenciID }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.OgrenciID }) |
+            @Html.ActionLink("Silme", "Delete", new { id=item.OgrenciID })
+        </td>
+    </tr>
+}
+
+</table>
+<br /> Sayfa @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter}))

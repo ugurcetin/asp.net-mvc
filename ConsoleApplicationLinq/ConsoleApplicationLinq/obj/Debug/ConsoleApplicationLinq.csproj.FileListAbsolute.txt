@@ -1,0 +1,6 @@
+C:\Users\UGURCETIN\Documents\Visual Studio 2015\Projects\ConsoleApplicationLinq\ConsoleApplicationLinq\bin\Debug\ConsoleApplicationLinq.exe.config
+C:\Users\UGURCETIN\Documents\Visual Studio 2015\Projects\ConsoleApplicationLinq\ConsoleApplicationLinq\bin\Debug\ConsoleApplicationLinq.exe
+C:\Users\UGURCETIN\Documents\Visual Studio 2015\Projects\ConsoleApplicationLinq\ConsoleApplicationLinq\bin\Debug\ConsoleApplicationLinq.pdb
+C:\Users\UGURCETIN\Documents\Visual Studio 2015\Projects\ConsoleApplicationLinq\ConsoleApplicationLinq\obj\Debug\ConsoleApplicationLinq.csprojResolveAssemblyReference.cache
+C:\Users\UGURCETIN\Documents\Visual Studio 2015\Projects\ConsoleApplicationLinq\ConsoleApplicationLinq\obj\Debug\ConsoleApplicationLinq.exe
+C:\Users\UGURCETIN\Documents\Visual Studio 2015\Projects\ConsoleApplicationLinq\ConsoleApplicationLinq\obj\Debug\ConsoleApplicationLinq.pdb
